@@ -1,11 +1,53 @@
 header {
     background-color: black;
     color: whitesmoke;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
 }
 
+nav {
+    background-color: darkgray;
+}
 ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    align-items: center;
-    max-width: 1000px;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.right {
+    background-color: gray;
+}
+
+.left {
+    background-color: rgba(178, 178, 178, 0.69);
+}
+
+.right ,.left {
+    padding: 0 0 100px 0;
+}
+
+main h3 {
+    display: flex;
+    justify-content: flex-start;
+}
+
+footer {
+    background-color: black;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 300px;
 }

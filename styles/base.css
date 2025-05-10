@@ -54,17 +54,20 @@ main {
 .right ul li{
     display: flex;
     align-items: center;
+    font-family: var(--font-family);
 }
 
 .left {
     background-color: rgba(178, 178, 178, 0.69);
     display: grid;
     grid-template-rows: 70px 1fr 1fr;
+    
 }
 
 
 .right ,.left {
     height: 500px;
+    
 }
 
 main h2 {

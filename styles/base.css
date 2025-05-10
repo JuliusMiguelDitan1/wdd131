@@ -109,8 +109,11 @@ main h2 {
 footer {
     background-color: black;
     color: whitesmoke;
+    height: 100px;
+}
+
+footer p {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 90px;
 }

@@ -1,5 +1,6 @@
-
-
+:root {
+    --font-family: "Teko", serif;
+}
 header {
     background-color: black;
     color: whitesmoke;
@@ -26,6 +27,7 @@ header li {
 nav a {
 	display: block;
     padding: 5px;
+    font-family: var(--font-family);
 	color: rgb(32, 148, 148);
 	font-size: 2.2rem;
     text-decoration: none;

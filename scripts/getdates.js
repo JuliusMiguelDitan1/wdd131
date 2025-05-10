@@ -1,0 +1,1 @@
+const lastModif = Date.parse(document.lastModified);

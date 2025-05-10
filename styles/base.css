@@ -101,9 +101,11 @@ main h2 {
 .country img {
     max-width: 200px;
     max-height: 200px;
-    padding: 30px;
+    padding: 20px;
 }
-
+.second p {
+    padding: 10px;
+}
 
 
 footer {

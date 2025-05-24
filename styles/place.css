@@ -1,7 +1,7 @@
 :root {
     --font-family: "Teko", serif;
-    --icon-mobile: url("../images/9025960_sun_icon.svg"); /* adjust if needed */
-    --color-text-light: whitesmoke;
+    --global-bg: whitesmoke;
+    --mobile-weather-icon: url('../images/9025960_sun_icon.svg');
 }
 
 body {
@@ -9,11 +9,12 @@ body {
     margin: 0;
     position: relative;
     min-height: 100vh;
+    background-color: var(--global-bg);
 }
 
 header {
     background-color: black;
-    color: var(--color-text-light);
+    color: var(--global-bg);
     display: grid;
     grid-template-rows: 1fr 1fr;
     text-align: center;
@@ -38,14 +39,12 @@ h1 {
     font-size: 1.5rem;
     margin: 1rem;
     z-index: 1;
-    overflow: hidden;
 }
 
-.image-container picture,
 .image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* or use 'contain' if you want the full image visible with possible background space */
     display: block;
 }
 
@@ -66,6 +65,20 @@ h1 {
     font-size: 1.2rem;
 }
 
+/* Weather Icon Styling */
+.weather h2::after {
+    content: " ☀️"; /* Emoticon for desktop */
+    margin-left: 0.5rem;
+}
+
+.icon img {
+    display: none; /* Hide SVG icon by default (desktop) */
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
+
 /* Desktop Layout */
 @media (min-width: 769px) {
     .data {
@@ -80,17 +93,6 @@ h1 {
         right: 40px;
     }
 
-    .weather h2::after {
-        content: "";
-        display: inline-block;
-        width: 30px;
-        height: 30px;
-        margin-left: 10px;
-        background-image: url("../images/9025960_sun_icon.svg");
-        background-size: cover;
-        vertical-align: middle;
-    }
-
     .image-container {
         position: relative;
     }
@@ -98,21 +100,20 @@ h1 {
     main {
         position: relative;
     }
-}
 
-/* Weather Icon Placeholder (optional backup styling) */
-.weather .icon {
-    float: right;
-    width: 30px;
-    height: 30px;
-    background-color: #ddd;
-    margin-left: 10px;
+    .weather h2::after {
+        content: " ☀️"; /* Show emoji on desktop */
+    }
+
+    .icon img {
+        display: none; /* Hide SVG in desktop */
+    }
 }
 
 /* Footer */
 footer {
     background-color: black;
-    color: var(--color-text-light);
+    color: var(--global-bg);
     text-align: center;
     padding: 1rem 0.5rem;
 }
@@ -125,8 +126,7 @@ footer p {
 /* Mobile Responsive CSS */
 /* --------------------- */
 @media (max-width: 768px) {
-    .image-container {
-        flex-direction: column;
+    picture {
         height: auto;
         padding: 2rem 1rem;
         text-align: center;
@@ -140,29 +140,16 @@ footer p {
         box-shadow: none;
     }
 
-    .data,
-    .weather {
-        top: auto;
-        bottom: auto;
-        left: auto;
-        right: auto;
+    .weather .icon img {
+        display: inline-block; /* Show SVG icon in mobile */
     }
 
-    .weather h2::before {
-        content: "";
-        display: block;
-        width: 40px;
-        height: 40px;
-        margin: 0 auto 0.5rem auto;
-        background-image: var(--icon-mobile);
-        background-size: contain;
-        background-repeat: no-repeat;
+    .weather h2::after {
+        content: ""; /* Hide emoji on mobile */
     }
 
     .weather .icon {
-        float: none;
-        display: block;
-        margin: 0 auto 1rem auto;
+        display: inline-block;
     }
 
     h1 {

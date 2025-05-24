@@ -5,11 +5,11 @@ const today = new Date(document.lastModified);
 full.innerHTML = today;
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Static values (adjust based on your displayed weather info)
+    // Static values
     const temperature = 8; // in °C
     const windSpeed = 10; // in km/h
 
-    // Function to calculate wind chill (Celsius version)
+    // Wind chill calculation for metric (°C, km/h)
     function calculateWindChill(temp, speed) {
         return (
             13.12 +
@@ -19,13 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
         ).toFixed(1);
     }
 
-    // Viability check
+    // Conditions for displaying wind chill
     let windChillOutput = "N/A";
     if (temperature <= 10 && windSpeed > 4.8) {
         windChillOutput = `${calculateWindChill(temperature, windSpeed)} °C`;
     }
 
-    // Insert result into the Weather section
+    // Insert result in the weather box
     const weatherBox = document.querySelector(".floating-box.weather");
     if (weatherBox) {
         const windChillElement = document.createElement("p");
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         weatherBox.appendChild(windChillElement);
     }
 
-    // Optional: display current date/time if you're using an element with id="full"
+    // Optional full date output
     const fullDateElement = document.getElementById("full");
     if (fullDateElement) {
         const now = new Date();

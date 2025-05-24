@@ -63,6 +63,18 @@ h1 {
 
 /* Desktop Layout */
 @media (min-width: 769px) {
+
+    .weather h2::after {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/9025960_sun_icon.svg'); /* Adjust path if needed */
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
     .data {
         position: absolute;
         top: 20px;

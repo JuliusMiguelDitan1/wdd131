@@ -1,0 +1,40 @@
+@media (min-width: 740px) {
+	header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.hamburger,
+	.close-btn {
+		display: none;
+	}
+
+	nav {
+		position: static;
+		height: auto;
+		width: auto;
+        background-color: #36454f;
+		padding: 0;
+	}
+
+	nav ul {
+		justify-content: flex-end;
+		flex-direction: row;
+	}
+
+	nav ul li {
+		margin-left: 1rem;
+	}
+
+	nav a {
+		flex: 1 1 100%;
+		color: #fff;
+		padding: 0.5rem 1rem;
+		text-align: center;
+	}
+
+    .section-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}

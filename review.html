@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Review Confirmation</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background-color: #f2f2f2;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    main {
+      background: #fff;
+      padding: 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      border-radius: .5rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Thank You for Your Review!</h1>
+    <p>Your product review has been submitted successfully.</p>
+    <p><strong>You have submitted <span id="reviewCount">0</span> reviews.</strong></p>
+  </main>
+
+  <footer>
+        <p>©2025 | Julius Miguel Ditan | Philippines |</p>
+        <p id="full"></p>
+    </footer>
+
+  <script>
+    // Update the localStorage counter
+    const key = 'reviewCount';
+    let count = parseInt(localStorage.getItem(key)) || 0;
+    count += 1;
+    localStorage.setItem(key, count);
+    document.getElementById('reviewCount').textContent = count;
+
+    // Footer year and last modified
+    const full = document.querySelector("#full");
+
+    const today = new Date(document.lastModified);
+
+    full.innerHTML = today;
+  </script>
+</body>
+</html>

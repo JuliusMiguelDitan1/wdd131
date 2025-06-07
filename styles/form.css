@@ -1,0 +1,125 @@
+:root {
+    --font-family: "Teko", serif;
+    --primary: #4d4756;
+	--secondary: #e3dfe8;
+	--accent: #000;
+}
+header {
+    background-color: black;
+    color: whitesmoke;
+    display: grid;
+}
+h1 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+body {
+			font-family: system-ui, sans-serif;
+			background: var(--secondary);
+			color: var(--primary);
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh;
+		}
+    main {
+			flex: 1;
+			padding: 1.5rem;
+			max-width: 40rem;
+			margin: 0 auto;
+			background: #fff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+			border-radius: .5rem;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			gap: 1.25rem;
+		}
+
+		label,
+		legend {
+			font-weight: 600;
+		}
+
+		select,
+		input[type="date"],
+		input[type="text"],
+		textarea {
+			width: 100%;
+			padding: .5rem;
+			font-size: 1rem;
+			border: 1px solid #ccc;
+			border-radius: .25rem;
+		}
+
+		fieldset {
+			border: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		/* ---------- star rating ---------- */
+		.star-rating {
+			display: inline-flex;
+			flex-direction: row-reverse;
+			justify-content: flex-end;
+		}
+
+		.star-rating input {
+			display: none;
+		}
+
+		.star-rating label {
+			font-size: 1.6rem;
+			color: #bbb;
+			cursor: pointer;
+			padding: 0 .15rem;
+		}
+
+		/* highlight on hover */
+		.star-rating label:hover,
+		.star-rating label:hover ~ label {
+			color: #fd4;
+		}
+
+		/* highlight the selected stars */
+		.star-rating input:checked ~ label {
+			color: #fd4;
+		}
+
+		.checkbox-group {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+			gap: .25rem 1rem;
+		}
+
+		input[type="submit"] {
+			background: var(--primary);
+			color: #fff;
+			border: none;
+			border-radius: .25rem;
+			font-size: 1.1rem;
+			padding: .75rem;
+			cursor: pointer;
+			transition: opacity .2s ease-in-out;
+		}
+
+		input[type="submit"]:hover,
+		input[type="submit"]:focus {
+			opacity: .85;
+		}
+
+footer {
+    background-color: black;
+    color: whitesmoke;
+    height: 100px;
+}
+
+footer p {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="images/favicon.ico">
+  <title>Directory</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/directory.css">
+  <script src="scripts/directory.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to Our Directory</h1>
+  </header>
+
+  <nav class="navbar">
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="home.html">Home</a>
+      <a href="catalog.html">Catalogs</a>
+      <a href="directory.html">Directory</a>
+      <a href="About.html">About us</a>
+    </div>
+  </nav>
+
+    <main>
+        <h1>Chamber of Commerce Directory Page</h1>
+        <div class="view-toggle">
+          <button onclick="switchView('grid')">Grid View</button>
+          <button onclick="switchView('list')">List View</button>
+        </div>
+
+      <div id="company-container" class="company-container grid"></div>
+    
+    </main>
+
+    <footer>
+        <p>©2025 | Julius Miguel Ditan | Philippines |</p><br>
+        <p id="full"></p>
+    </footer>
+
+</body>
+</html>
